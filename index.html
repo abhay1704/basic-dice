@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WD LAB-10</title>
+    <style>
+        h1 {
+            font-family: cursive;
+        }
+
+        body {
+            text-align: center;
+            width: 70%;
+            margin: auto;
+        }
+
+        button {
+            padding: 20px 50px;
+            color: white;
+            width: 200px;
+            border-radius: 10%;
+            background-image: linear-gradient(#e07912, #dd0a0af1, #ca3434, #ea6c0c);
+
+        }
+
+        div {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Play dice game</h1>
+    <div class="image">
+        <img src="images/dice6.png" alt="" id="image">
+    </div>
+    <button onclick="play()">Play</button>
+    <script>
+        function play() {
+            var res = Math.floor(Math.random() * 6 + 1);
+            var audio = new Audio('play.mp3');
+            audio.play();
+            document.getElementById('image').setAttribute('src', `images/dice${res}.png`);
+        }
+    </script>
+</body>
+
+</html>
